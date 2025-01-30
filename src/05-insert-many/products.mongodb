@@ -1,0 +1,27 @@
+use("platzi_store");
+/* Drop borra todos los documentos de una coleccion */
+db.products.drop();
+db.products.insertMany(
+  [
+    {
+      _id: 1,
+      name: "Product 1",
+      price: 100,
+    },
+    {
+      _id: 2,
+      name: "Product 2",
+      price: 50,
+    },
+    {
+      _id: 3,
+      name: "Product 3",
+      price: 400,
+    },
+  ],
+  {
+    ordered: false, //Ahora puedo insertar todos los que no tengan error
+  }
+);
+
+db.products.find();
