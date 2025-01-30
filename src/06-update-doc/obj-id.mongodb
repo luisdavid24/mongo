@@ -1,0 +1,13 @@
+use("platzi_store");
+
+db.products.updateOne(
+  //Query
+  { _id: ObjectId("679be7a102171543c5f123da") },
+  //change=>operators
+  {
+    $inc: {
+      //es para valores numericos, porque se trata incrementar
+      price: 9,
+    },
+  }
+);

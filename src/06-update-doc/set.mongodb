@@ -1,0 +1,14 @@
+use("platzi_store");
+
+db.products.updateOne(
+  //Query
+  { _id: 4 },
+  //change=>operators
+  {
+    $set: {
+      name: "Change name",
+      price: 3000,
+      tags: ["A", "C", "D"],
+    },
+  }
+);
