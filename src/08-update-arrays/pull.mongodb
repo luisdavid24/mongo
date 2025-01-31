@@ -1,0 +1,24 @@
+use("platzi_store");
+
+/* Retiramos tags de book , hicimos una actualizacion global*/
+/* db.inventory.updateMany(
+  {}, //esto indica que sera para todos los que encuentre
+  {
+    $pull: {
+      //quita elemento de los array solo funciona en los array
+      tags: "book",
+    },
+  }
+); */
+
+//Aqui vamos a remover dos tags en una sola instruccion
+db.inventory.updateMany(
+  {},
+  {
+    $pull: {
+      tags: {
+        $in: ["appliance", "school"],
+      },
+    },
+  }
+);
