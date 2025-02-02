@@ -1,0 +1,8 @@
+use("sample_training");
+
+//1 => 0-10, A a la Z, del menor al mayor
+//-1 => 10-0 , Z a la A, del mayor al menor
+db.zips
+  .find({ pop: { $gte: 100 } })
+  .sort({ pop: 1 })
+  .limit(3);
